@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="경영컨설턴트 포트폴리오">
+  <title>Portfolio | Frontend Developer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="logo" href="#hero" aria-label="홈으로 이동">DEV<span>.</span></a>
+      <div class="nav-actions">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="icon-button theme-toggle" type="button" aria-label="다크 모드로 전환" title="테마 전환">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <button class="icon-button menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false"
+          aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">HELLO, I BUILD FOR THE WEB</p>
+          <h1>사용하기 편한 경험을<br><em>단단한 코드</em>로 만듭니다.</h1>
+          <p class="hero-description">안녕하세요. 사용자와 기술 사이의 간격을 줄이는 경영컨설턴트 <strong data-owner-name>김성우</strong>입니다.</p>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#projects">프로젝트 보기</a>
+            <a class="button button-ghost" href="#contact">이야기 나누기</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="code-window">
+            <div class="window-bar"><span></span><span></span><span></span></div>
+            <pre><code><b>const</b> developer = {
+  name: <i>'김성우'</i>,
+  focus: <i>'useful products'</i>,
+  learns: <b>true</b>
+};
+
+developer.<mark>build()</mark>;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-number">01 / ABOUT</p>
+        <div class="about-grid">
+          <div class="portrait-wrap reveal">
+            <img src="images/profile-photo.png" alt="정장을 입고 엄지손가락을 든 프로필 캐릭터">
+          </div>
+          <div class="about-copy reveal">
+            <h2>좋은 화면은<br>좋은 질문에서 시작됩니다.</h2>
+            <p>왜 이 기능이 필요한지, 사용자는 어디에서 망설이는지 먼저 생각합니다. 시맨틱 HTML과 유연한 CSS, 명확한 JavaScript로 누구나 편하게 사용할 수 있는 화면을 만들고 있습니다.
+            </p>
+            <dl class="quick-facts">
+              <div>
+                <dt>관심사</dt>
+                <dd>웹 접근성 · UX · 인터랙션</dd>
+              </div>
+              <div>
+                <dt>작업 방식</dt>
+                <dd>작게 만들고, 빠르게 확인하기</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <p class="section-number">02 / SKILLS</p>
+        <div class="section-heading reveal">
+          <h2>도구보다 원리를<br>먼저 이해합니다.</h2>
+          <p>웹 표준을 바탕으로 구조, 표현, 동작의 역할을 분리합니다.</p>
+        </div>
+        <ul class="skill-list reveal" aria-label="기술 스택">
+          <li><span>01</span><strong>HTML</strong><small>Semantic · Accessibility</small></li>
+          <li><span>02</span><strong>CSS</strong><small>Responsive · Grid · Flexbox</small></li>
+          <li><span>03</span><strong>JavaScript</strong><small>ES6+ · DOM · Async</small></li>
+          <li><span>04</span><strong>Git & GitHub</strong><small>Version Control · Collaboration</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="section-number">03 / PROJECTS</p>
+        <div class="section-heading reveal">
+          <h2>최근에 만든 것들</h2>
+          <p>GitHub 공개 저장소를 실시간으로 불러옵니다.</p>
+        </div>
+        <div class="project-filters" id="project-filters" aria-label="프로젝트 언어 필터"></div>
+        <div class="projects-status" id="projects-status" role="status" aria-live="polite"></div>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="section-number">04 / CONTACT</p>
+          <h2>같이 만들 이야기가<br>있나요?</h2>
+          <p>아래 양식을 작성해 주세요. 입력 내용은 검증 예시이며 실제로 전송되지는 않습니다.</p>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" required>
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="form-field">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="form-field">
+            <label for="message">메시지</label>
+            <textarea id="message" name="message" rows="5" aria-describedby="message-error" required></textarea>
+            <p class="error-message" id="message-error"></p>
+          </div>
+          <button class="button button-primary" type="submit">메시지 확인하기</button>
+          <p class="form-success" id="form-success" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year"></span> <span data-owner-name>김성우</span></p>
+      <div class="social-links">
+        <a id="github-link" href="https://github.com/octocat" target="_blank" rel="noopener noreferrer">GitHub <span
+            aria-hidden="true">↗</span></a>
+        <a href="mailto:hello@example.com">Email <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="페이지 맨 위로 이동">↑</button>
+</body>
+
+</html>
