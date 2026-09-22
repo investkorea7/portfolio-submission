@@ -349,13 +349,13 @@ code i {
 }
 
 .portrait-wrap {
-  background: var(--accent);
+  background: var(--bg);
   border-radius: var(--radius);
   overflow: hidden;
 }
 
 .portrait-wrap {
-  background: #ffffff;
+  background: var(--bg);
 }
 
 .portrait-wrap img {
