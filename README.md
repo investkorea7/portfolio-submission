@@ -71,3 +71,23 @@ GitHub Pages 배포 후 이 항목을 실제 URL로 교체하세요.
 ## 스크린샷
 
 배포 전 데스크톱, 모바일, 다크 모드 화면을 캡처해 이 섹션에 추가하세요.
+
+
+# 포트폴리오 홈페이지
+
+## 배포 주소
+https://investkorea7.github.io/portfolio-submission/
+
+## 주요 기능
+- 반응형 레이아웃
+- 모바일 햄버거 메뉴
+- 다크 모드
+- GitHub 프로젝트 불러오기
+- Web3Forms 문의 메일 전송
+
+## 사용 기술
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
+- Web3Forms

@@ -1,6 +1,6 @@
 const CONFIG = {
   ownerName: '김성우',
-  githubUsername: 'octocat',
+  githubUsername: 'investkorea7',
   projectLimit: 6,
 };
 
