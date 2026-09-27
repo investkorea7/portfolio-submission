@@ -151,12 +151,66 @@ const validateField = (field) => {
   return !message;
 };
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
   event.preventDefault();
-  const fields = [...elements.contactForm.querySelectorAll('input, textarea')];
+
+  const fields = [
+    ...elements.contactForm.querySelectorAll(
+      'input:not([type="hidden"]), textarea'
+    ),
+  ];
+
   const isValid = fields.map(validateField).every(Boolean);
-  elements.formSuccess.textContent = isValid ? '입력 확인이 완료되었습니다. 감사합니다!' : '';
-  if (isValid) elements.contactForm.reset();
+
+  if (!isValid) {
+    elements.formSuccess.textContent = '';
+    elements.formSuccess.classList.remove('error');
+    return;
+  }
+
+  const submitButton = elements.contactForm.querySelector(
+    'button[type="submit"]'
+  );
+  const originalButtonText = submitButton.textContent;
+
+  submitButton.disabled = true;
+  submitButton.textContent = '전송 중...';
+  elements.formSuccess.textContent = '';
+  elements.formSuccess.classList.remove('error');
+
+  try {
+    const formData = new FormData(elements.contactForm);
+    const formObject = Object.fromEntries(formData.entries());
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formObject),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || '메시지 전송에 실패했습니다.');
+    }
+
+    elements.formSuccess.textContent =
+      '메시지가 정상적으로 전송되었습니다. 감사합니다!';
+
+    elements.contactForm.reset();
+    state.formErrors = {};
+  } catch (error) {
+    elements.formSuccess.textContent =
+      '메시지를 전송하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+
+    elements.formSuccess.classList.add('error');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
 };
 
 const handleScroll = () => {
